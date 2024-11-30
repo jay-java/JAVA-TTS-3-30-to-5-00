@@ -1,0 +1,21 @@
+package core;
+
+import java.util.Scanner;
+
+class QQ{
+	public void show() {
+		System.out.println("show in QQ class");
+	}
+}
+public class P004_UserInput {
+	public static void main(String[] args) {
+		System.out.println("main method");
+		QQ q = new QQ();
+		q.show();
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter int value = ");
+		int i = sc.nextInt();
+		System.err.println("i = "+i);
+	}
+}

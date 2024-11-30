@@ -1,0 +1,13 @@
+package core;
+
+class QQ{
+	public void show() {
+		System.out.println("show in QQ class");
+	}
+}
+public class P004_UserInput {
+	public static void main(String[] args) {
+		System.out.println("main method");
+		QQ q = new QQ();
+	}
+}
