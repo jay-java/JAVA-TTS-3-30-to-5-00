@@ -17,7 +17,14 @@ public class P004_UserInput {
 		System.out.println("enter int value = ");
 		int i = sc.nextInt();
 		System.out.println("i = "+i);
+//		
+//		System.out.println("enter name : ");
+//		String name = sc.next();
+//		System.out.println(name);
 		
+		System.out.println("ener character : ");
+		char c = sc.next().charAt(0);
+		System.out.println(c);
 		
 	}
 }

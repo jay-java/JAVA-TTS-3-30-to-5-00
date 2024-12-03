@@ -1,0 +1,11 @@
+package core;
+
+public class P008_Array {
+	public static void main(String[] args) {
+		int a[] = {1,2,3,4,5};
+		System.out.println(a[0]);
+		for(int index =0;index<a.length;index++) {
+			System.out.println(a[index]);
+		}
+	}
+}
