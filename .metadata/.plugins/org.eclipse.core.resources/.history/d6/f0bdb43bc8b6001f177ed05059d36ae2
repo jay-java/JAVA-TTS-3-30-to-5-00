@@ -1,0 +1,23 @@
+package core;
+
+class Student{
+	int id;
+	String name;
+	double per;
+	static String c_name = "XYZ";
+	Student(int id,String name,double per){
+		this.id= id;
+		this.name = name;
+		this.per=per;
+	}
+	public void showData() {
+		System.out.println("id : "+id+"name : "+name+" per : "+per+" c name : "+c_name);
+	}
+	
+}
+public class P014_StaticKeyword {
+	public static void main(String[] args) {
+		Student s1 = new Student(1,"java", 63.10);
+		s1.showData();
+	}
+}

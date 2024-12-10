@@ -9,6 +9,7 @@ class QQ{
 }
 public class P004_UserInput {
 	public static void main(String[] args) {
+		String name = "java";
 		System.out.println("main method");
 		QQ q = new QQ();
 		q.show();
