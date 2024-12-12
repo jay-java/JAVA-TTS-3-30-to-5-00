@@ -1,0 +1,10 @@
+class Call{
+	public static void callObject() {
+		
+	}
+}
+public class first {
+	public static void main(String[] args) {
+		
+	}
+}

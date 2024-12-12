@@ -1,0 +1,15 @@
+package core;
+
+class User{
+	int id;
+	String name;
+	String address;
+	long contact;
+	
+}
+public class P015_Encapsulation {
+	public static void main(String[] args) {
+		User u1 = new User();
+		
+	}
+}

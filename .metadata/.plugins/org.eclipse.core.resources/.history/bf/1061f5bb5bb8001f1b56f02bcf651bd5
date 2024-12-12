@@ -1,0 +1,14 @@
+package core;
+
+class AA{
+	int i = 1;
+	public void change() {
+		i++;
+		System.out.println(i);
+	}
+}
+public class PP016_Final {
+	public static void main(String[] args) {
+		
+	}
+}

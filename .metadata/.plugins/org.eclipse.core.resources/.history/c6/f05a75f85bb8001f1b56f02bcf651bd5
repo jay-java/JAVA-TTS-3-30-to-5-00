@@ -1,0 +1,20 @@
+package core;
+
+class AA{
+	int i = 1;
+	public void change() {
+		i++;
+		System.out.println(i);
+		System.out.println("change in A class");
+	}
+}
+class BB extends AA{
+	public void change() {
+		System.out.println("change in B class");
+	}
+}
+public class PP016_Final {
+	public static void main(String[] args) {
+		
+	}
+}

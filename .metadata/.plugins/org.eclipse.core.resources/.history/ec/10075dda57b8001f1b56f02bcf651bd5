@@ -1,0 +1,30 @@
+package core;
+
+class User{
+	int id;
+	String name;
+	String address;
+	long contact;
+	public void setId(int id) {
+		this.id = id;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public void setContact(long contact) {
+		this.contact = contact;
+	}
+}
+public class P015_Encapsulation {
+	public static void main(String[] args) {
+		User u1 = new User();
+		u1.id=1;
+		u1.name= "java";
+		u1.address = "ahmedabad";
+		u1.contact = 98746513;
+		System.out.println(u1.address);
+	}
+}

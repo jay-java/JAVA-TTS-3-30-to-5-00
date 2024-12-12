@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
     <fullyQualifiedTypeName name="core.Data"/>
     <fullyQualifiedTypeName name="core.B"/>
     <fullyQualifiedTypeName name="core.C"/>
     <fullyQualifiedTypeName name="core.D"/>
+    <fullyQualifiedTypeName name="core.Overload"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="core.Child"/>
+    <fullyQualifiedTypeName name="core.Student"/>
+    <fullyQualifiedTypeName name="core.SBI"/>
+    <fullyQualifiedTypeName name="core.JAVA"/>
 </qualifiedTypeNameHistroy>
