@@ -11,4 +11,6 @@
     <fullyQualifiedTypeName name="core.Student"/>
     <fullyQualifiedTypeName name="core.SBI"/>
     <fullyQualifiedTypeName name="core.JAVA"/>
+    <fullyQualifiedTypeName name="core.User"/>
+    <fullyQualifiedTypeName name="core.AA"/>
 </qualifiedTypeNameHistroy>
