@@ -1,0 +1,14 @@
+package core;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
+public class P020_FileHandling {
+	public static void main(String[] args) throws FileNotFoundException {
+		String msg ="hello java developers this is file handling";
+		
+		FileOutputStream fos = new FileOutputStream("t1.txt");
+		byte[] b= msg.getBytes();
+		fos.write(b);
+	}
+}

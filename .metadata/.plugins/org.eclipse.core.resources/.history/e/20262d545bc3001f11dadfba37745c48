@@ -1,0 +1,8 @@
+package core;
+
+public class P020_FileHandling {
+	public static void main(String[] args) {
+		String msg ="hello java developers this is file handling";
+		
+	}
+}

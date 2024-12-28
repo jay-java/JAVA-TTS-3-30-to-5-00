@@ -1,0 +1,9 @@
+package core;
+class AA{
+	
+}
+public class P022_Thread {
+	public static void main(String[] args) {
+		
+	}
+}

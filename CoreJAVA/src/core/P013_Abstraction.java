@@ -10,6 +10,7 @@ abstract class RBI{
 		System.out.println("static in abstract");
 	}
 }
+
 class SBI extends RBI{
 
 	@Override

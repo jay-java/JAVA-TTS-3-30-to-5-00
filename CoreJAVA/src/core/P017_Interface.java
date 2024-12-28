@@ -23,8 +23,12 @@ interface inter3 {
 		System.out.println("interface 6");
 	}
 }
-
-class InterfaceCall implements inter2, inter3 {
+class ABC{
+	public void call() {
+		System.out.println("call in abc class");
+	}
+}
+class InterfaceCall extends ABC implements inter2, inter3 {
 
 	@Override
 	public void interface1() {
