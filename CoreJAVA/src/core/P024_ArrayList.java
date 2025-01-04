@@ -16,6 +16,7 @@ public class P024_ArrayList {
 		list.add(1);
 		System.out.println(list);
 		list.add(123432);
+		list.add(3454.45);
 		list.remove(2);
 		System.out.println(list);
 		list.add(2,4565);

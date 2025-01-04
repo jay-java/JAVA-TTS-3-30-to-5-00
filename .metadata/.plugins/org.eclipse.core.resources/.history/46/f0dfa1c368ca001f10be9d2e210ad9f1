@@ -1,0 +1,9 @@
+package core;
+
+import java.util.Vector;
+
+public class P025_Vector {
+	public static void main(String[] args) {
+		Vector vr = new Vector();
+	}
+}
