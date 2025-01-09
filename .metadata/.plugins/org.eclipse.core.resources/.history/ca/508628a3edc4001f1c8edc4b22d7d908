@@ -1,9 +1,0 @@
-package core;
-class AZX extends QQQ implements Runnable{
-	
-}
-public class P022_Thread {
-	public static void main(String[] args) {
-		
-	}
-}

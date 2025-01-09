@@ -1,0 +1,10 @@
+
+package core;
+//AWT
+class SwingDemo{
+	
+}
+public class P031_Swing {
+	public static void main(String[] args) {
+	}
+}

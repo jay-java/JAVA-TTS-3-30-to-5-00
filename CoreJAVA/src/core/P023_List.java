@@ -21,6 +21,8 @@ public class P023_List {
 		list.add(2,4565);
 		System.out.println(list);
 		System.out.println(list.size());
+		System.out.println("is exists : "+list.contains(1));
+		System.out.println("list is : "+list.isEmpty());
 		Iterator itr = list.iterator();
 		while(itr.hasNext()) {
 			System.out.println(itr.next());

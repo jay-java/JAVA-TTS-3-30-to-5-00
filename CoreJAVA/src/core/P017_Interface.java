@@ -28,7 +28,7 @@ class ABC{
 		System.out.println("call in abc class");
 	}
 }
-class InterfaceCall extends ABC implements inter2, inter3 {
+class InterfaceCall implements inter2, inter3 {
 
 	@Override
 	public void interface1() {
@@ -52,6 +52,8 @@ class InterfaceCall extends ABC implements inter2, inter3 {
 
 public class P017_Interface {
 	public static void main(String[] args) {
+		
+		inter1 i1 = new InterfaceCall();
 		InterfaceCall i = new InterfaceCall();
 		i.interface1();
 		i.interface2();
