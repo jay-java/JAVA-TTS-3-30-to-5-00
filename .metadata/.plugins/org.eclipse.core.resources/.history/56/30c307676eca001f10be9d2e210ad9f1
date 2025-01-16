@@ -1,7 +1,0 @@
-package core;
-
-public class P030_HashTable {
-	public static void main(String[] args) {
-		
-	}
-}
