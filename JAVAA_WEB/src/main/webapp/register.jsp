@@ -7,6 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%-- <%scriplets %> --%>
+<%
+String msg = (String)request.getAttribute("msg");
+%>
+<%if(msg!=null){ %>
+<h2><%out.print(msg); %></h2>
+<%} %>
 	<form action="UserController" method="post">
 		<table>
 			<tr>
@@ -32,7 +39,6 @@
 			<tr>
 				<td><input type="submit" name="action" value="register"></td>
 			</tr>
-
 		</table>
 	</form>
 </body>

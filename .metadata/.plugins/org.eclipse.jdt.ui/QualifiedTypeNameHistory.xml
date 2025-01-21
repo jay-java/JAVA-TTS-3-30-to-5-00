@@ -54,4 +54,5 @@
     <fullyQualifiedTypeName name="javax.swing.JLabel"/>
     <fullyQualifiedTypeName name="core.DataNotFound"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="model.User"/>
 </qualifiedTypeNameHistroy>
