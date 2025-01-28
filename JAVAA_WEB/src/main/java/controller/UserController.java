@@ -57,6 +57,7 @@ public class UserController extends HttpServlet {
 			boolean flag = UserDao.checkEmail(request.getParameter("email"));
 			if(flag == true) {
 				User u1 = UserDao.userLogin(u);
+				System.out.println("u1 in controller : "+u1);
 				if(u1 == null) {
 					request.setAttribute("msg", "password is incorrect");
 					request.getRequestDispatcher("login.jsp").forward(request, response);

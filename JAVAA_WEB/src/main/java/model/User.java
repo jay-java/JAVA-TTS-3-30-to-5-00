@@ -40,23 +40,11 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public User(int id, long contact, String name, String address, String email, String password) {
-		super();
-		this.id = id;
-		this.contact = contact;
-		this.name = name;
-		this.address = address;
-		this.email = email;
-		this.password = password;
-	}
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", contact=" + contact + ", name=" + name + ", address=" + address + ", email="
 				+ email + ", password=" + password + "]";
 	}
+	
 	
 }

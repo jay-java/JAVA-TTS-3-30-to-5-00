@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
@@ -8,6 +9,10 @@
 			<item value="marker"/>
 		</list>
 		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="java.lang.Class">
+		<list key="findhistory">
 		</list>
 	</section>
 </section>

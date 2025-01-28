@@ -3,6 +3,8 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import connection.DBConnection;
 import model.User;
@@ -55,13 +57,37 @@ public class UserDao {
 				u1.setId(rs.getInt("id"));
 				u1.setName(rs.getString("name"));
 				u1.setContact(rs.getLong("contact"));
-//				u1.setAddress(rs.getString("address"));
+				u1.setAddress(rs.getString("address"));
 				u1.setEmail(rs.getString("email"));
 				u1.setPassword(rs.getString("password"));
+				System.out.println("u1 in DAO class : "+u1);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return u1;
+	}
+	public static List<User> getAllUsers() {
+		List<User> list  = new ArrayList<User>();
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from user";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			ResultSet rs = pst.executeQuery();
+			while(rs.next()) {
+				User u1 = new User();
+				u1.setId(rs.getInt("id"));
+				u1.setName(rs.getString("name"));
+				u1.setContact(rs.getLong("contact"));
+				u1.setAddress(rs.getString("address"));
+				u1.setEmail(rs.getString("email"));
+				u1.setPassword(rs.getString("password"));
+				System.out.println("u1 in DAO class : "+u1);
+				list.add(u1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
 	}
 }

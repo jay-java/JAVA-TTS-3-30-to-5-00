@@ -7,11 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-String msg = (String)request.getAttribute("msg");
-%>
+<%String msg = (String)request.getAttribute("msg");%>
 <%if(msg!=null){ %>
-<h2><%out.print(msg); %></h2>
+<%out.print(msg); %>
 <%} %>
 	<form action="UserController" method="post">
 		<table>
