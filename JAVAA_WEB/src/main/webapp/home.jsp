@@ -64,10 +64,11 @@
 					<td><%=u1.getPassword() %></td>
 					<td>
 						<form action="UserController" method="post">
+							<input type="hidden" name="id" value="<%=u1.getId()%>">
 							<input type="submit" name="action" value="edit">
 						</form>
 					</td>
-					<td><a href="#">Delete</a></td>
+					<td><a href="UserController?action=delete&id=<%=u1.getId()%>">Delete</a></td>
 				</tr>
 				<%} %>
 			</tbody>
