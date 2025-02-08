@@ -94,9 +94,12 @@ public class DoctorController extends HttpServlet {
 			Doctor d = new Doctor();
 			d.setEmail(request.getParameter("email"));
 			d.setPassword(request.getParameter("password"));
+			System.out.println(d);
 			boolean flag = DoctorDao.checkDoctorEmail(request.getParameter("email"));
+			System.out.println(flag);
 			if(flag == true) {
 				Doctor d1 =  DoctorDao.doctorLogin(d);
+				System.out.println("d1 : "+d1);
 				if(d1!=null) {
 					HttpSession session = request.getSession();
 					session.setAttribute("data",d1);
@@ -110,6 +113,59 @@ public class DoctorController extends HttpServlet {
 			else {
 				request.setAttribute("msg", "Account not found");
 				request.getRequestDispatcher("d-login.jsp").forward(request, response);
+			}
+		}
+		else if(action.equalsIgnoreCase("update")) {
+			String savePath = "C:\\Users\\user\\JAVA TTS 3-30 to 5-00\\Doctor-Finder\\src\\main\\webapp\\images";
+			File fileSaveDir = new File(savePath);
+			if (!fileSaveDir.exists()) {
+				fileSaveDir.mkdir();
+			}
+			Part file1 = request.getPart("image");
+			String fileName = extractfilename(file1);
+			file1.write(savePath + File.separator + fileName);
+			String filePath = savePath + File.separator + fileName;
+
+			String savePath2 = "C:\\Users\\user\\JAVA TTS 3-30 to 5-00\\Doctor-Finder\\src\\main\\webapp\\images";
+			File imgSaveDir = new File(savePath2);
+			if (!imgSaveDir.exists()) {
+				imgSaveDir.mkdir();
+			}
+			
+			Doctor d = new Doctor();
+			d.setDid(Integer.parseInt(request.getParameter("did")));
+			d.setImage(fileName);
+			d.setName(request.getParameter("name"));
+			d.setContact(Long.parseLong(request.getParameter("contact")));
+			d.setAddress(request.getParameter("address"));
+			d.setSpecialization(request.getParameter("specialization"));
+			d.setWork_address(request.getParameter("w_address"));
+			d.setEmail(request.getParameter("email"));
+			System.out.println(d);
+			DoctorDao.updateProfile(d);
+			HttpSession session = request.getSession();
+			session.setAttribute("data",d);
+			request.getRequestDispatcher("d-home.jsp").forward(request, response);
+		}
+		else if(action.equalsIgnoreCase("cp")) {
+			int id = Integer.parseInt(request.getParameter("did"));
+			String op = request.getParameter("op");
+			String np = request.getParameter("np");
+			String cnp = request.getParameter("cnp");
+			boolean flag = DoctorDao.checkOldPassword(id, op);
+			if(flag == true) {
+				if(np.equals(cnp)) {
+					DoctorDao.changePassword(id, np);
+					response.sendRedirect("d-home.jsp");
+				}
+				else {
+					request.setAttribute("msg", "Password not matched");
+					request.getRequestDispatcher("d-change-pass.jsp").forward(request, response);
+				}
+			}
+			else {
+				request.setAttribute("msg", "Old Password incorrect");
+				request.getRequestDispatcher("d-change-pass.jsp").forward(request, response);
 			}
 		}
 	}
