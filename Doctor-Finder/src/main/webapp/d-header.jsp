@@ -75,8 +75,8 @@
 							<a href="#" class="nav-link dropdown-toggle"
 								data-bs-toggle="dropdown">Packages</a>
 							<div class="dropdown-menu m-0">
-								<a href="d-register.jsp" class="dropdown-item">As Doctor</a> <a
-									href="p-register.jsp" class="dropdown-item">As Patient</a>
+								<a href="d-add-package.jsp" class="dropdown-item">Add Package</a> <a
+									href="p-manage-package.jsp" class="dropdown-item">Manage Package</a>
 							</div>
 
 						</div>

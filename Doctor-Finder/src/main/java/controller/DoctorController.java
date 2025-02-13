@@ -2,6 +2,8 @@ package controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Random;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +15,7 @@ import javax.servlet.http.Part;
 
 import dao.DoctorDao;
 import model.Doctor;
+import service_OTP.Servicesss;
 
 /**
  * Servlet implementation class DoctorController
@@ -166,6 +169,52 @@ public class DoctorController extends HttpServlet {
 			else {
 				request.setAttribute("msg", "Old Password incorrect");
 				request.getRequestDispatcher("d-change-pass.jsp").forward(request, response);
+			}
+		}
+		else if(action.equalsIgnoreCase("fp")) {
+			String email = request.getParameter("email");
+			boolean flag= DoctorDao.checkDoctorEmail(email);
+			if(flag == true) {
+				Random r = new Random();
+				int num = r.nextInt(999999);
+				System.out.println(num);
+				Servicesss s = new Servicesss();
+				s.sendMail(email, num);
+				request.setAttribute("email", email);
+				request.setAttribute("otp", num);
+				request.getRequestDispatcher("d-verify-otp.jsp").forward(request, response);
+			}
+			else {
+				request.setAttribute("msg", "account doen't exist !");
+				request.getRequestDispatcher("d-forgot-password.jsp").forward(request, response);
+			}
+		}
+		else if(action.equalsIgnoreCase("verify")) {
+			String email = request.getParameter("email");
+			int otp1 = Integer.parseInt(request.getParameter("otp1"));
+			int otp2 = Integer.parseInt(request.getParameter("otp2"));
+			if(otp1 == otp2) {
+				request.setAttribute("email", email);
+				request.getRequestDispatcher("d-new-password.jsp").forward(request, response);
+			}
+			else {
+				request.setAttribute("otp", otp1);
+				request.setAttribute("email", email);
+				request.setAttribute("msg", "OTP not matched");
+				request.getRequestDispatcher("d-verify-otp.jsp").forward(request, response);
+			}
+		}
+		else if(action.equalsIgnoreCase("np")) {
+			String email = request.getParameter("email");
+			String np = request.getParameter("np");
+			String cnp = request.getParameter("cnp");
+			if(np.equals(cnp)) {
+				DoctorDao.newPassword(email, np);
+				response.sendRedirect("d-login.jsp");
+			}
+			else {
+				request.setAttribute("msg", "password not matched");
+				request.getRequestDispatcher("d-new-password.jsp").forward(request, response);
 			}
 		}
 	}
