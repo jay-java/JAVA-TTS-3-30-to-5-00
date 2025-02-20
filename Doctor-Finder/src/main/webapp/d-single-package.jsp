@@ -1,6 +1,8 @@
+<%@page import="dao.PackageDao"%>
+<%@page import="model.DoctorPackages"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ include file="d-header.jsp"%>
+    pageEncoding="UTF-8"%>
+    <%@include file="d-header.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +10,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
+<%int pid = Integer.parseInt(request.getParameter("pid")); %>
+<%DoctorPackages p = PackageDao.getPackageByPid(pid); %>
+
+<%
 	String msg = (String) request.getAttribute("msg");
 	%>
 	<!-- Contact Start -->
@@ -43,23 +48,23 @@
 					<div class="bg-white rounded p-5 m-5 mb-0">
 						<form action="PackageController" method="post">
 							<div class="row g-3">
-								<input type="hidden" name="did" value="<%=d.getDid()%>">
+								<input type="hidden" name="pid" value="<%=p.getP_id()%>">
 								<div class="col-12">
 									<input type="text" class="form-control bg-light border-0"
-										name="p_name" placeholder="Package Name" style="height: 55px;">
+										name="p_name" value="<%=p.getP_name()%>" style="height: 55px;">
 								</div>
 								<div class="col-12">
 									<input type="text" class="form-control bg-light border-0"
-										name="p_amount" placeholder="Package Price"
+										name="p_amount" value="<%=p.getP_amount() %>"
 										style="height: 55px;">
 								</div>
 								<div class="col-12">
 									<input type="text" class="form-control bg-light border-0"
-										name="p_test" placeholder="Test Name" style="height: 55px;">
+										name="p_test" value="<%=p.getP_test() %>" style="height: 55px;">
 								</div>
 								<div class="col-12">
 									<button class="btn btn-primary w-100 py-3" name="action"
-										value="add" type="submit">Add</button>
+										value="update" type="submit">Update</button>
 								</div>
 							</div>
 						</form>
@@ -69,6 +74,9 @@
 		</div>
 	</div>
 	<!-- Contact End -->
+
+
+
 
 
 

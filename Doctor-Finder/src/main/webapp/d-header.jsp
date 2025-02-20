@@ -76,7 +76,7 @@
 								data-bs-toggle="dropdown">Packages</a>
 							<div class="dropdown-menu m-0">
 								<a href="d-add-package.jsp" class="dropdown-item">Add Package</a> <a
-									href="p-manage-package.jsp" class="dropdown-item">Manage Package</a>
+									href="d-manage-package.jsp" class="dropdown-item">Manage Package</a>
 							</div>
 
 						</div>
