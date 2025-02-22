@@ -1,5 +1,5 @@
 <%@page import="dao.PackageDao"%>
-<%@page import="model.DoctorPackages"%>
+<%@page import="model.Packages"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@include file="d-header.jsp" %>
@@ -10,8 +10,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%int pid = Integer.parseInt(request.getParameter("pid")); %>
-<%DoctorPackages p = PackageDao.getPackageByPid(pid); %>
+<%
+int pid = Integer.parseInt(request.getParameter("pid"));
+%>
+<%
+Packages p = PackageDao.getPackageByPid(pid);
+%>
 
 <%
 	String msg = (String) request.getAttribute("msg");
@@ -23,7 +27,7 @@
 				<h5
 					class="d-inline-block text-primary text-uppercase border-bottom border-5">Any
 					Questions?</h5>
-				<h1 class="display-4">Doctor Registration</h1>
+				<h1 class="display-4">Package Update</h1>
 			</div>
 			<div class="row">
 				<div class="col-12" style="height: 500px;"></div>

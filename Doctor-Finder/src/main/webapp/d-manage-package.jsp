@@ -1,5 +1,5 @@
 <%@page import="java.util.List"%>
-<%@page import="model.DoctorPackages"%>
+<%@page import="model.Packages"%>
 <%@page import="dao.PackageDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -23,8 +23,12 @@
 				<h1 class="display-4">Manage Packages</h1>
 			</div>
 			<div class="row g-5">
-			<%List<DoctorPackages> list = PackageDao.getPackagesByDid(d.getDid()); %>
-			<%for(DoctorPackages p:list){ %>
+			<%
+			List<Packages> list = PackageDao.getPackagesByDid(d.getDid());
+			%>
+			<%
+			for(Packages p:list){
+			%>
 				<div class="col-xl-4 col-lg-6">
 					<div class="bg-light rounded overflow-hidden">
 						<img class="img-fluid w-100" src="img/blog-1.jpg" alt="">

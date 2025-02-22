@@ -23,25 +23,23 @@
             <div class="row justify-content-center position-relative" style="margin-top: -200px; z-index: 1;">
                 <div class="col-lg-8">
                     <div class="bg-white rounded p-5 m-5 mb-0">
-                        <form action="" method="post">
+                        <form action="PatientController" method="post">
                             <div class="row g-3">
-                             	<div class="col-12">
-                                    <input type="file" class="form-control bg-light border-0" placeholder="Your Photo" style="height: 55px;">
+                             	
+                                <div class="col-12">
+                                    <input type="text" class="form-control bg-light border-0" name="name" placeholder="Your Name" style="height: 55px;">
                                 </div>
                                 <div class="col-12">
-                                    <input type="text" class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;">
+                                    <input type="text" class="form-control bg-light border-0" name="contact" placeholder="Your Contact" style="height: 55px;">
                                 </div>
                                 <div class="col-12">
-                                    <input type="text" class="form-control bg-light border-0" placeholder="Your Contact" style="height: 55px;">
+                                    <input type="text" class="form-control bg-light border-0" name="address" placeholder="Your Address" style="height: 55px;">
                                 </div>
                                 <div class="col-12">
-                                    <input type="text" class="form-control bg-light border-0" placeholder="Your Address" style="height: 55px;">
+                                    <input type="email" class="form-control bg-light border-0" name="email" placeholder="Your Email" style="height: 55px;">
                                 </div>
                                 <div class="col-12">
-                                    <input type="email" class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;">
-                                </div>
-                                <div class="col-12">
-                                    <input type="password" class="form-control bg-light border-0" placeholder="Your Password" style="height: 55px;">
+                                    <input type="password" class="form-control bg-light border-0" name="password" placeholder="Your Password" style="height: 55px;">
                                 </div>
                                 
                                 <div class="col-12">

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.PackageDao;
-import model.DoctorPackages;
+import model.Packages;
 
 /**
  * Servlet implementation class PackageController
@@ -43,7 +43,7 @@ public class PackageController extends HttpServlet {
 			throws ServletException, IOException {
 		String action = request.getParameter("action");
 		if (action.equalsIgnoreCase("add")) {
-			DoctorPackages p = new DoctorPackages();
+			Packages p = new Packages();
 			p.setDid(Integer.parseInt(request.getParameter("did")));
 			p.setP_name(request.getParameter("p_name"));
 			p.setP_amount(Integer.parseInt(request.getParameter("p_amount")));
@@ -51,6 +51,15 @@ public class PackageController extends HttpServlet {
 			System.out.println(p);
 			PackageDao.insertPackage(p);
 			response.sendRedirect("d-home.jsp");
+		}
+		else if(action.equalsIgnoreCase("update")) {
+			Packages p = new Packages();
+			p.setP_id(Integer.parseInt(request.getParameter("pid")));
+			p.setP_name(request.getParameter("p_name"));
+			p.setP_amount(Integer.parseInt(request.getParameter("p_amount")));
+			p.setP_test(request.getParameter("p_test"));
+			PackageDao.updatePackage(p);
+			response.sendRedirect("d-manage-package.jsp");
 		}
 	}
 

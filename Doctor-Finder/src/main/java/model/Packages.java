@@ -1,6 +1,6 @@
 package model;
 
-public class DoctorPackages {
+public class Packages {
 	private int p_id,did,p_amount;
 	private String p_name,p_test;
 	public int getP_id() {
