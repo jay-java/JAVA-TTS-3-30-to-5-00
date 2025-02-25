@@ -20,7 +20,6 @@ INDEX VERSION 1.134+C:\Users\user\JAVA TTS 3-30 to 5-00\.metadata\.plugins\org.e
 1729379676.index
 3547965648.index
 43302718.index
-1902374495.index
 3880742056.index
 812671716.index
 3413270776.index

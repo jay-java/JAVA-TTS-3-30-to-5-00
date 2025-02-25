@@ -53,6 +53,7 @@ public class PatientDao {
 			ResultSet rs = pst.executeQuery();
 			if (rs.next()) {
 				d = new Patient();
+				d.setPid(rs.getInt("id"));
 				d.setName(rs.getString("name"));
 				d.setContact(rs.getLong("contact"));
 				d.setAddress(rs.getString("address"));
