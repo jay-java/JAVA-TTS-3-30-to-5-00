@@ -66,4 +66,26 @@ public class PatientDao {
 		}
 		return d;
 	}
+	public static Patient getpatientByPid(int pid) {
+		Patient d = null;
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from patient where id=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1, pid);
+			ResultSet rs = pst.executeQuery();
+			if (rs.next()) {
+				d = new Patient();
+				d.setPid(rs.getInt("id"));
+				d.setName(rs.getString("name"));
+				d.setContact(rs.getLong("contact"));
+				d.setAddress(rs.getString("address"));
+				d.setEmail(rs.getString("email"));
+				d.setPassword(rs.getString("password"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return d;
+	}
 }

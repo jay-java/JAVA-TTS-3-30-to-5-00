@@ -81,7 +81,7 @@
 							</div>
 
 						</div>
-						<a href="#" class="nav-item nav-link">All Appointments</a>
+						<a href="p-appointments.jsp" class="nav-item nav-link">All Appointments</a>
 
 						<div class="nav-item dropdown">
 							<a href="#" class="nav-link dropdown-toggle"

@@ -84,8 +84,8 @@
 							<a href="#" class="nav-link dropdown-toggle"
 								data-bs-toggle="dropdown">Appointments</a>
 							<div class="dropdown-menu m-0">
-								<a href="d-register.jsp" class="dropdown-item">Pending</a> <a
-									href="p-register.jsp" class="dropdown-item">Completed</a>
+								<a href="d-pending-appointment.jsp" class="dropdown-item">Pending</a> <a
+									href="d-complete-appointment.jsp" class="dropdown-item">Completed</a>
 							</div>
 
 

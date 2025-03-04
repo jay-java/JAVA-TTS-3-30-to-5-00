@@ -161,4 +161,30 @@ public class DoctorDao {
 		}
 		return list;
 	}
+	public static Doctor getDoctorByDis(int id) {
+		Doctor d = null;
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from doctor where did=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1, id);
+			ResultSet rs = pst.executeQuery();
+			if (rs.next()) {
+				d = new Doctor();
+				d.setDid(rs.getInt("did"));
+				d.setImage(rs.getString("image"));
+				d.setName(rs.getString("name"));
+				d.setContact(rs.getLong("contact"));
+				d.setAddress(rs.getString("address"));
+				d.setSpecialization(rs.getString("specialization"));
+				d.setWork_address(rs.getString("w_address"));
+				d.setEmail(rs.getString("email"));
+				d.setPassword(rs.getString("password"));
+				System.out.println("d in DAO class : " + d);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return d;
+	}
 }
