@@ -10,7 +10,6 @@
 <body>
 
 
-
 <!-- Contact Start -->
     <div class="container-fluid pt-5">
         <div class="container">
@@ -25,14 +24,14 @@
             <div class="row justify-content-center position-relative" style="margin-top: -200px; z-index: 1;">
                 <div class="col-lg-8">
                     <div class="bg-white rounded p-5 m-5 mb-0">
-                        <form action="" method="post">
+                        <form action="AdminController" method="post">
                             <div class="row g-3">
                              	
                                 <div class="col-12">
-                                    <input type="email" class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;">
+                                    <input type="email" class="form-control bg-light border-0" name="email" placeholder="Your Email" style="height: 55px;">
                                 </div>
                                 <div class="col-12">
-                                    <input type="password" class="form-control bg-light border-0" placeholder="Your Password" style="height: 55px;">
+                                    <input type="password" class="form-control bg-light border-0" name="password" placeholder="Your Password" style="height: 55px;">
                                 </div>
                                 
                                 <div class="col-12">
