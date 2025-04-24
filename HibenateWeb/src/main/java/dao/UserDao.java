@@ -2,6 +2,7 @@ package dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -40,6 +41,15 @@ public class UserDao {
 		tx.commit();
 		session.close();
 		sf.close();
+	}
+	
+	public List<User> getAllUsers(){
+		String hql = "from User";
+//		String hql = "from User u where u.email=:email and u.password=:password";
+		Query q = session.createQuery(hql);
+//		q.getParameter(1, u.get)
+		List<User> list = q.list();
+		return list;
 	}
 
 }
