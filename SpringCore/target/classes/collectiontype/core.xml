@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="collectiontype.User" name="u1">
+		<property name="id" value="1" />
+		<property name="name" value="java" />
+		<property name="address">
+			<list>
+				<value>ahmedabad</value>
+				<value>mumbai</value>
+				<value>delhi</value>
+			</list>
+		</property>
+		<property name="contact">
+			<set>
+				<value>9874653</value>
+				<value>7894655</value>
+			</set>
+		</property>
+		<property name="bankDetails">
+			<map>
+				<entry key="13234" value="java"/>
+				<entry key="3435" value="java"/>
+			</map>
+		</property>
+	</bean>
+
+</beans>
+
