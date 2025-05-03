@@ -11,7 +11,6 @@ import com.model.User;
 public class UserDao {
 	
 	private HibernateTemplate hibernateTemplate;
-	 
 	
 	public HibernateTemplate getHibernateTemplate() {
 		return hibernateTemplate;
