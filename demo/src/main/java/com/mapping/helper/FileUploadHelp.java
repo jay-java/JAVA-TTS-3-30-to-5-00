@@ -1,0 +1,63 @@
+package com.mapping.helper;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
+
+@Component
+public class FileUploadHelp {
+
+	// 1.For dynamic path
+//	public final String uploadDirectoryy = new ClassPathResource("static/image/").getFile().getAbsolutePath();
+//	public FileUploadHelp() throws IOException {
+//		
+//	}
+	
+	
+
+	// 2.for your static path
+	public final String uploadDirectory = "C:\\Users\\Admin\\JAVA TTS 3-00 to 4-30\\demo\\src\\main\\resources\\static\\image";
+
+	public boolean uploadFile(MultipartFile multi) {
+		boolean flag = false;
+
+		try {
+			// 1.Option one by stream
+
+			// created input stream
+//			InputStream is = multi.getInputStream();
+//
+//			//read data from file to byte
+//			byte[] data= new byte[is.available()];
+//			
+//			//reading data from byte object
+//			is.read(data);
+//			
+//			
+//			//write file
+//			FileOutputStream fos = new FileOutputStream(uploadDirectory+File.separator+multi.getOriginalFilename());
+//			fos.write(data);
+//			fos.flush();
+//			fos.close();
+
+			
+			// 2.option second it will complete in single line
+			Files.copy(multi.getInputStream(),
+					Paths.get(uploadDirectory + File.separator + multi.getOriginalFilename()),
+					StandardCopyOption.REPLACE_EXISTING);
+			flag = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return flag;
+	}
+}

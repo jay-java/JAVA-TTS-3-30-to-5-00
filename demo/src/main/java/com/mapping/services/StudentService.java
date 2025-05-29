@@ -1,0 +1,34 @@
+package com.mapping.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import com.mapping.model.Student;
+import com.mapping.repository.StudentRepository;
+
+@Service
+public class StudentService {
+
+	@Autowired
+	private StudentRepository studentRepository;
+	
+	public Student saveStudent(Student s) {
+		return this.studentRepository.save(s);
+	}
+	
+	public List<Student> getAllStu(Integer pageNumber,Integer pageSize){
+		
+		Pageable p = PageRequest.of(pageNumber, pageSize);
+		
+		Page<Student> pageStudent = this.studentRepository.findAll(p);
+		List<Student> studentList = pageStudent.getContent();
+		
+		return studentList;
+		
+	}
+}

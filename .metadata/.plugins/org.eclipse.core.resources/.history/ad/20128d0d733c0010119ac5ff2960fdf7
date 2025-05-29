@@ -1,0 +1,55 @@
+package com.mapping.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import com.mapping.model.Student;
+import com.mapping.services.CourseService;
+import com.mapping.services.StudentService;
+
+@RestController
+public class StudetnController {
+
+	@Autowired
+	private StudentService studentService;
+
+	@Autowired
+	private CourseService courseService;
+
+	@GetMapping("/")
+	public String msg() {
+		return "app running";
+	}
+
+	@PostMapping("/student")
+	public Student addNewStudent(@RequestBody Student s) {
+		System.out.println(s);
+		this.courseService.saveCourse(s.getCourse());
+		this.studentService.saveStudent(s);
+		return s;
+	}
+
+//	@GetMapping("/student")
+//	public List<Student> getAllStudents() {
+//		return this.studentService.getAllStu();
+//
+//	}
+	
+	@GetMapping("/student")
+	public List<Student> getAllStudents() {
+		int pageSize = 5;
+		int pageNumber = 1;
+		
+		Pageable p = PageRequest.of(pageNumber, pageSize);
+		
+		return this.studentService.getAllStu();
+
+	}
+
+}
