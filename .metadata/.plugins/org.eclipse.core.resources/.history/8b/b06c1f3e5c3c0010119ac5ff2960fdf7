@@ -1,9 +1,0 @@
-package com.mapping.helper;
-
-import org.springframework.stereotype.Component;
-
-@Component
-public class FileUploadHelp {
-
-	public final String uploadDirectory = "C:\\Users\\Admin\\JAVA TTS 3-00 to 4-30\\demo\\src\\main\\resources\\static\\image";
-}
